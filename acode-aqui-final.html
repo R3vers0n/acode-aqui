@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acode Aqui – Manutenção Residencial Goiânia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-white text-gray-800">
+    <header class="bg-orange-500 text-white p-6 text-center text-2xl font-bold">
+        Acode Aqui – Serviços de Manutenção Residencial (Goiânia, GO)
+    </header>
+
+    <!-- TABELA DE PREÇOS -->
+    <section class="p-6">
+        <h2 class="text-xl font-semibold mb-4 text-orange-600">Tabela de Preços – Goiânia, GO</h2>
+        <table class="w-full border border-gray-300 text-left">
+            <thead class="bg-orange-100">
+                <tr>
+                    <th class="p-2">Serviço</th>
+                    <th class="p-2">Preço (R$)</th>
+                    <th class="p-2">Observações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-t">
+                    <td class="p-2">Limpeza de Caixa d'Água</td>
+                    <td class="p-2">180,00</td>
+                    <td class="p-2">até 1.000 L</td>
+                </tr>
+                <tr class="border-t">
+                    <td class="p-2">Limpeza de Caixa de Gordura</td>
+                    <td class="p-2">160,00</td>
+                    <td class="p-2">com remoção total</td>
+                </tr>
+                <tr class="border-t">
+                    <td class="p-2">Limpeza de Placas Solares</td>
+                    <td class="p-2">10,00 por placa</td>
+                    <td class="p-2">mín. 10 placas</td>
+                </tr>
+                <tr class="border-t">
+                    <td class="p-2">Instalação de Tomadas</td>
+                    <td class="p-2">70,00</td>
+                    <td class="p-2">incluso material básico</td>
+                </tr>
+                <tr class="border-t">
+                    <td class="p-2">Troca de Lâmpadas</td>
+                    <td class="p-2">20,00</td>
+                    <td class="p-2">LED ou fluorescente</td>
+                </tr>
+                <tr class="border-t">
+                    <td class="p-2">Desentupimento de Pia/Ralos</td>
+                    <td class="p-2">150,00</td>
+                    <td class="p-2">com deslocamento</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- FORMULÁRIO DE AGENDAMENTO -->
+    <section class="p-6 bg-orange-50 mt-4">
+        <h2 class="text-xl font-semibold text-orange-600 mb-4">Agende seu Serviço</h2>
+        <form id="agendamentoForm"
+              action="https://formsubmit.co/reversoneduardosousa@gmail.com"
+              method="POST"
+              class="space-y-4">
+            
+            <!-- Configurações ocultas -->
+            <input type="hidden" name="_subject" value="Novo Agendamento Acode Aqui" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_language" value="pt" />
+            <input type="hidden" name="_captcha" value="false" />
+            
+            <!-- Campos do cliente -->
+            <input class="w-full p-2 border rounded" type="text" name="Nome" placeholder="Nome Completo" required />
+            <input class="w-full p-2 border rounded" type="tel" name="Telefone" placeholder="Telefone" required />
+            <input class="w-full p-2 border rounded" type="text" name="Endereço" placeholder="Endereço" required />
+            
+            <!-- Serviço -->
+            <select class="w-full p-2 border rounded" name="Serviço" required>
+                <option value="">Escolha o serviço</option>
+                <option>Limpeza de Caixa d'Água</option>
+                <option>Limpeza de Caixa de Gordura</option>
+                <option>Limpeza de Placas Solares</option>
+                <option>Instalação de Tomadas</option>
+                <option>Troca de Lâmpadas</option>
+                <option>Desentupimento de Pia/Ralos</option>
+            </select>
+            
+            <!-- Pagamento -->
+            <select class="w-full p-2 border rounded" name="Pagamento" required>
+                <option value="">Forma de Pagamento</option>
+                <option>Pix</option>
+                <option>Cartão de Crédito</option>
+                <option>Dinheiro</option>
+            </select>
+            
+            <!-- Data e Hora -->
+            <input class="w-full p-2 border rounded" type="date" name="Data Preferida" required />
+            <input class="w-full p-2 border rounded" type="time" name="Horário Preferido" required />
+            
+            <!-- Botão -->
+            <button type="submit" class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">
+                Confirmar e Agendar
+            </button>
+        </form>
+        
+        <!-- Mensagem de Sucesso -->
+        <div id="mensagemSucesso" class="mt-4 hidden text-green-600 font-semibold">
+            ✅ Serviço agendado com sucesso! Você receberá a confirmação por telefone.
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer class="bg-orange-500 text-white p-4 text-center mt-6">
+        © 2025 Acode Aqui – Goiânia, GO | Todos os direitos reservados.
+    </footer>
+
+    <!-- SCRIPT JS -->
+    <script>
+        const form = document.getElementById('agendamentoForm');
+        const mensagem = document.getElementById('mensagemSucesso');
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form)
+            }).then(response => {
+                if (response.ok) {
+                    form.reset();
+                    mensagem.classList.remove('hidden');
+                } else {
+                    alert('Erro ao enviar. Tente novamente.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
