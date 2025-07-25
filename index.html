@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acode Aqui – Manutenção Residencial</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+  <header class="bg-orange-500 text-white shadow-md p-6 text-center">
+    <h1 class="text-3xl font-bold">Acode Aqui</h1>
+    <p class="text-lg">Serviços de Manutenção Residencial – Goiânia</p>
+  </header>
+  <section class="p-6 max-w-6xl mx-auto">
+    <h2 class="text-2xl font-semibold text-orange-600 mb-4 text-center">Tabela de Preços</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="bg-orange-50 p-4 rounded-lg shadow">
+        <h3 class="font-semibold text-lg">Limpeza de Caixa d’Água</h3>
+        <p class="text-orange-600 font-bold">R$ 180,00</p>
+        <p>Até 1.000L – acima, sob orçamento</p>
+      </div>
+      <div class="bg-orange-50 p-4 rounded-lg shadow">
+        <h3 class="font-semibold text-lg">Limpeza de Caixa de Gordura</h3>
+        <p class="text-orange-600 font-bold">R$ 160,00</p>
+        <p>Limpeza completa e remoção de resíduos</p>
+      </div>
+      <div class="bg-orange-50 p-4 rounded-lg shadow">
+        <h3 class="font-semibold text-lg">Placas Solares</h3>
+        <p class="text-orange-600 font-bold">R$ 10,00 por placa</p>
+        <p>Mínimo de 10 placas</p>
+      </div>
+      <div class="bg-orange-50 p-4 rounded-lg shadow">
+        <h3 class="font-semibold text-lg">Instalação de Tomadas</h3>
+        <p class="text-orange-600 font-bold">R$ 70,00</p>
+        <p>Incluso material básico</p>
+      </div>
+      <div class="bg-orange-50 p-4 rounded-lg shadow">
+        <h3 class="font-semibold text-lg">Troca de Lâmpadas</h3>
+        <p class="text-orange-600 font-bold">R$ 20,00</p>
+        <p>LED ou fluorescente</p>
+      </div>
+      <div class="bg-orange-50 p-4 rounded-lg shadow">
+        <h3 class="font-semibold text-lg">Desentupimento</h3>
+        <p class="text-orange-600 font-bold">R$ 150,00</p>
+        <p>Inclui deslocamento em Goiânia</p>
+      </div>
+    </div>
+  </section>
+  <section class="p-6 bg-gray-50 mt-6">
+    <div class="max-w-xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-semibold text-orange-600 mb-4 text-center">Agende seu Serviço</h2>
+      <form action="https://formsubmit.co/reversoneduardosousa@gmail.com" method="POST" class="space-y-4">
+        <input type="hidden" name="_subject" value="Novo Agendamento Acode Aqui" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_language" value="pt" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input class="w-full p-3 border rounded" type="text" name="Nome" placeholder="Nome Completo" required />
+        <input class="w-full p-3 border rounded" type="tel" name="Telefone" placeholder="Telefone" required />
+        <input class="w-full p-3 border rounded" type="text" name="Endereço" placeholder="Endereço" required />
+        <select class="w-full p-3 border rounded" name="Serviço" required>
+          <option value="">Escolha o serviço</option>
+          <option>Limpeza de Caixa d’Água</option>
+          <option>Limpeza de Caixa de Gordura</option>
+          <option>Limpeza de Placas Solares</option>
+          <option>Instalação de Tomadas</option>
+          <option>Troca de Lâmpadas</option>
+          <option>Desentupimento de Pia/Ralos</option>
+        </select>
+        <select class="w-full p-3 border rounded" name="Pagamento" required>
+          <option value="">Forma de Pagamento</option>
+          <option>Pix</option>
+          <option>Cartão de Crédito</option>
+          <option>Dinheiro</option>
+        </select>
+        <input class="w-full p-3 border rounded" type="date" name="Data Preferida" required />
+        <input class="w-full p-3 border rounded" type="time" name="Horário Preferido" required />
+        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white p-3 rounded font-semibold transition-all">
+          Confirmar e Agendar
+        </button>
+      </form>
+    </div>
+  </section>
+  <footer class="bg-orange-500 text-white p-4 text-center mt-10">
+    © 2025 Acode Aqui – Todos os direitos reservados.
+  </footer>
+</body>
+</html>
